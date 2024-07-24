@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Khula:wght@300;400;600;700;800&family=Montserrat:ital,wght@0,255;1,255&display=swap" rel="stylesheet">
+    <style>
+        .hover {
+            --s: 0.1em;   /* the thickness of the line */
+            --c: #ffffff; /* the color */
+            --_p: 0%;     /* Initial state */
+            
+            color: #c7272700;
+            padding-bottom: var(--s);
+            background: 
+                linear-gradient(90deg,var(--c) 50%,#9290C3 0) calc(100% - var(--_p))/200% 100%,
+                linear-gradient(var(--c) 0 0) 0% 100%/var(--_p) var(--s) no-repeat;
+            -webkit-background-clip: text,padding-box;
+                    background-clip: text,padding-box;
+            transition: 2s;
+        }
+        
+        .hover.loaded {
+            --_p: 100%;  /* Final state on load */
+        }
+
+        body {
+            font-size: 30px;  /* Added unit 'px' */
+            font-family: "Khula", sans-serif;
+            font-weight: 100;
+            font-style: normal;
+            text-align: center;
+            background-color: rgb(36, 36, 36); /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, #070F2B , #1B1A55);
+        }
+    </style>
+</head>
+<body>
+    <h1 class="hover">😺Kattmaffian😺</h1>
+
+    <script>
+        // Ensure the script runs after the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Select the h1 element with the class 'hover'
+            var h1Element = document.querySelector('h1.hover');
+
+            // Add the 'loaded' class to the h1 element to trigger the transition
+            h1Element.classList.add('loaded');
+        });
+    </script>
+</body>
+</html>
